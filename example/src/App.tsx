@@ -10,10 +10,18 @@ export default function App() {
       <NostrPost
         event={mockEvents[0] as Event}
         metadata={mockMetadata[0] as Metadata}
+        replyFn={() => console.log('reply')}
+        repostFn={() => console.log('repost')}
+        reactionFn={() => console.log('reaction')}
+        shareFn={() => console.log('share')}
       />
       <NostrPost
         event={mockEvents[1] as Event}
         metadata={mockMetadata[1] as Metadata}
+        replyFn={() => console.log('reply')}
+        repostFn={() => console.log('repost')}
+        reactionFn={() => console.log('reaction')}
+        shareFn={() => console.log('share')}
       />
     </SafeAreaView>
   );

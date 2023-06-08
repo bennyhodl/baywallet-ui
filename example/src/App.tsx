@@ -1,12 +1,20 @@
 import * as React from 'react';
-
-import { SafeAreaView, Text } from 'react-native';
-import { Row } from "@baywallet/components";
+import { mockEvents, mockMetadata } from 'example/mocks';
+import { SafeAreaView } from 'react-native';
+import { Metadata, NostrPost } from '@baywallet/components';
+import { Event } from 'nostr-tools';
 
 export default function App() {
   return (
-      <Row>
-        <Text>gef</Text>
-      </Row>
+    <SafeAreaView>
+      <NostrPost
+        event={mockEvents[0] as Event}
+        metadata={mockMetadata[0] as Metadata}
+      />
+      <NostrPost
+        event={mockEvents[1] as Event}
+        metadata={mockMetadata[1] as Metadata}
+      />
+    </SafeAreaView>
   );
 }

@@ -11,8 +11,7 @@ export const Share = ({ engage }: ShareProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
           }}
           size={25}
         />

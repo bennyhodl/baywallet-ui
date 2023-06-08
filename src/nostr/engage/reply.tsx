@@ -12,8 +12,7 @@ export const Reply = ({ engage, replies }: ReplyProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
           }}
           size={25}
         />

@@ -37,8 +37,7 @@ export const NostrPost = ({
               <>
                 <Icon
                   source={{
-                    uri:
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
+                    uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
                   }}
                   size={15}
                 />

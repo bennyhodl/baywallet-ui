@@ -158,8 +158,9 @@
     ]
   },
   "dependencies": {
+    "nostr-tools": "1.10.1",
     "react-native-gesture-handler": "^2.11.0",
-    "react-native-reanimated": "^3.2.0",
+    "react-native-reanimated": "2.14.4",
     "react-native-ui-lib": "^7.4.0"
   }
 }

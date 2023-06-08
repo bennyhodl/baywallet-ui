@@ -5,7 +5,7 @@ interface RowProps extends ViewProps {
   children: React.ReactNode;
 }
 
-export const Row = ({ children }: RowProps) => {
+export const Column = ({ children }: RowProps) => {
   return (
     <View flex row>
       {children}

@@ -4,13 +4,25 @@ import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
 import { Metadata } from './index';
 import { StyleSheet } from 'react-native';
 import { formatDate } from '../util';
+import { Engage } from './engage/engage';
 
 export type PostProps = {
   event: Event;
   metadata: Metadata;
+  replyFn: () => void;
+  repostFn: () => void;
+  reactionFn: () => void;
+  shareFn: () => void;
 };
 
-export const NostrPost = ({ event, metadata }: PostProps) => {
+export const NostrPost = ({
+  event,
+  metadata,
+  replyFn,
+  repostFn,
+  reactionFn,
+  shareFn,
+}: PostProps) => {
   const { time, date } = formatDate(event.created_at);
   return (
     <View style={styles.post}>
@@ -44,7 +56,12 @@ export const NostrPost = ({ event, metadata }: PostProps) => {
       <View style={styles.content}>
         <Text text70>{event.content}</Text>
       </View>
-      {/* <Text>{event.content}</Text> */}
+      <Engage
+        replyFn={replyFn}
+        repostFn={repostFn}
+        reactionFn={reactionFn}
+        shareFn={shareFn}
+      />
     </View>
   );
 };

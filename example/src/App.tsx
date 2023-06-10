@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="thatnewnew">
         <Stack.Screen name="test" component={Test} />
         <Stack.Screen name="twitter" component={TwitterStyle} />
         <Stack.Screen name="thatnewnew" component={ThatNewNew} />

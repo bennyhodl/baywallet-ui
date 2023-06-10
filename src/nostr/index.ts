@@ -1,4 +1,5 @@
 export * from './nostr-post';
+export * from './nostr-profile';
 
 export type Metadata = {
   name?: string;

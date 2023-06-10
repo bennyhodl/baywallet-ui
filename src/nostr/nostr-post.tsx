@@ -2,7 +2,7 @@ import React from 'react';
 import { Event } from 'nostr-tools';
 import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
 import { Metadata } from './index';
-import { StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { formatDate } from '../util';
 import { Engage } from './engage/engage';
 
@@ -13,6 +13,7 @@ export type PostProps = {
   repostFn: () => void;
   reactionFn: () => void;
   shareFn: () => void;
+  goToProfile?: () => void;
 };
 
 export const NostrPost = ({
@@ -22,29 +23,35 @@ export const NostrPost = ({
   repostFn,
   reactionFn,
   shareFn,
+  goToProfile,
 }: PostProps) => {
   const { time, date } = formatDate(event.created_at);
   return (
     <View style={styles.post}>
       <View row>
-        <Avatar source={{ uri: metadata.picture }} />
+        <Avatar onPress={goToProfile} source={{ uri: metadata.picture }} />
         <View style={styles.information} centerV>
-          <View row centerV>
-            <Text text80BO style={styles.displayName}>
-              {metadata.display_name}
-            </Text>
-            {metadata.nip05 && (
-              <>
-                <Icon
-                  source={{
-                    uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
-                  }}
-                  size={15}
-                />
-                <Text style={styles.nip5}>{metadata.nip05.split('@')[1]}</Text>
-              </>
-            )}
-          </View>
+          <Pressable onPress={goToProfile}>
+            <View row centerV>
+              <Text text80BO style={styles.displayName}>
+                {metadata.display_name}
+              </Text>
+              {metadata.nip05 && (
+                <>
+                  <Icon
+                    source={{
+                      uri:
+                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
+                    }}
+                    size={15}
+                  />
+                  <Text style={styles.nip5}>
+                    {metadata.nip05.split('@')[1]}
+                  </Text>
+                </>
+              )}
+            </View>
+          </Pressable>
           <View row>
             <Date text={time} />
             <Date text={' • '} />

@@ -17,23 +17,23 @@ export const Engage = ({
   replyFn,
   repostFn,
   reactionFn,
-  shareFn,
-}: EngageProps) => {
+}: // shareFn,
+EngageProps) => {
   return (
     <View row space-between style={styles.bar}>
       <Reply engage={replyFn} />
       <Repost engage={repostFn} />
       <Reaction engage={reactionFn} />
-      <Share engage={shareFn} />
+      {/* <Share engage={shareFn} /> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   bar: {
-    width: '100%',
+    width: '75%',
     display: 'flex',
-    justifyContent: 'space-between',
-    paddingHorizontal: 30,
+    justifyContent: 'space-around',
+    paddingHorizontal: 0,
   },
 });

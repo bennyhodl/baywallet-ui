@@ -6,7 +6,7 @@ import { Pressable, StyleSheet } from 'react-native';
 import { formatDate } from '../util';
 import { Engage } from './engage/engage';
 
-export type PostProps = {
+export type NostrEventProps = {
   event: Event;
   metadata: Metadata;
   replyFn: () => void;
@@ -24,7 +24,7 @@ export const NostrPost = ({
   reactionFn,
   shareFn,
   goToProfile,
-}: PostProps) => {
+}: NostrEventProps) => {
   const { time, date } = formatDate(event.created_at);
   return (
     <View style={styles.post}>

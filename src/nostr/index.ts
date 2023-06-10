@@ -1,6 +1,14 @@
 export * from './nostr-post';
 export * from './nostr-profile';
-
+export * from './post';
+/**
+ * Expanded Metadata fields
+ * damus_donation?: number;
+ * badges?: any;
+ * reactions?: any;
+ * followersCount?: number;
+ * webOfTrustScore?: any;
+ */
 export type Metadata = {
   name?: string;
   username?: string;
@@ -13,4 +21,5 @@ export type Metadata = {
   lud16?: string;
   nip05?: string;
   pubkey?: string;
+  [key: string]: any;
 };

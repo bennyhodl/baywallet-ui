@@ -4,7 +4,7 @@ import { View } from 'react-native-ui-lib';
 import { Reply } from './reply';
 import { Repost } from './repost';
 import { Reaction } from './reaction';
-import { Share } from './share';
+// import { Share } from './share';
 
 export type EngageProps = {
   replyFn: () => void;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Event } from 'nostr-tools';
 import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
-import { Metadata } from './index';
+import { Metadata } from '../nostr/index';
 import { Pressable, StyleSheet } from 'react-native';
 import { formatDate } from '../util';
-import { Engage } from './engage/engage';
+import { Engage } from '../nostr/engage/engage';
 
 export type NostrEventProps = {
   event: Event;

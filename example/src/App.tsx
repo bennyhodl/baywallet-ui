@@ -1,31 +1,22 @@
 import * as React from 'react';
-import { mockEvents, mockMetadata } from 'example/mocks';
-import { SafeAreaView, ScrollView } from 'react-native';
-import { Metadata, NostrPost, NostrProfile } from '@baywallet/components';
-import { Event } from 'nostr-tools';
+import { ThatNewNew } from './ThatNewNew';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TwitterStyle from './Twitter';
+import { Test } from './Test';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <NostrProfile profile={mockMetadata[0] as Metadata} />
-        <NostrPost
-          event={mockEvents[0] as Event}
-          metadata={mockMetadata[0] as Metadata}
-          replyFn={() => console.log('reply')}
-          repostFn={() => console.log('repost')}
-          reactionFn={() => console.log('reaction')}
-          shareFn={() => console.log('share')}
-        />
-        <NostrPost
-          event={mockEvents[1] as Event}
-          metadata={mockMetadata[1] as Metadata}
-          replyFn={() => console.log('reply')}
-          repostFn={() => console.log('repost')}
-          reactionFn={() => console.log('reaction')}
-          shareFn={() => console.log('share')}
-        />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="test" component={Test} />
+        <Stack.Screen name="twitter" component={TwitterStyle} />
+        <Stack.Screen name="thatnewnew" component={ThatNewNew} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;

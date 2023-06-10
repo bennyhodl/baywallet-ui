@@ -1,7 +1,7 @@
 import React from 'react';
 import { Event } from 'nostr-tools';
-import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
-import { Metadata } from '../nostr/index';
+import { Avatar, Colors, Icon, Text, View } from 'react-native-ui-lib';
+import { Metadata } from '../types';
 import { Pressable, StyleSheet } from 'react-native';
 import { formatDate } from '../util';
 import { Engage } from '../nostr/engage/engage';

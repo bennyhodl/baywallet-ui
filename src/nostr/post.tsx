@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Pressable } from 'react-native';
 import { View, Avatar, Text } from 'react-native-ui-lib';
-import { Metadata } from '.';
+import { Metadata } from '../types';
 import { Event } from 'nostr-tools';
 import { TextWithClamp } from '../base';
 import { Engage } from './engage/engage';
+import { useBayWalletUI } from '../BayWalletUIProvider';
 
 export type PostProps = {
   event: Event;
@@ -25,6 +26,7 @@ export const Post = ({
   shareFn,
   goToProfile,
 }: PostProps) => {
+  const {} = useBayWalletUI();
   const [width, setWidth] = useState<string | undefined>('50%');
   const [height, setHeight] = useState<number | undefined>(undefined);
   const [clamp, setClamp] = useState<boolean>(false);
@@ -65,8 +67,8 @@ export const Post = ({
             {event.content}
           </TextWithClamp>
         </Pressable>
-
         <View height={10} />
+        <Text>wefnbqoiwrbgoqierbgqeoirgbqeoirgbeo</Text>
         <View row centerV spread>
           <Engage
             replyFn={replyFn}
@@ -98,15 +100,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     margin: 5,
-  },
-  date: {
-    fontSize: 12,
-    color: '#AAA',
-    paddingRight: 5,
-  },
-  expand: {
-    marginTop: 5,
-    color: '#00F',
   },
 });
 
@@ -193,6 +186,11 @@ const styles = StyleSheet.create({
 //         <View style={styles.avatar}>
 //           <View row centerV>
 //             <Text style={styles.date}>{time}</Text>
+// date: {
+//     fontSize: 12,
+//     color: '#AAA',
+//     paddingRight: 5,
+//   },
 //             <Avatar
 //               size={30}
 //               source={{ uri: metadata.picture }}

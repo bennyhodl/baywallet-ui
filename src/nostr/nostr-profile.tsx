@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, Image, View, Text, Button } from 'react-native-ui-lib';
-import { Metadata } from '.';
+import { Metadata } from '../types';
 import { StyleSheet } from 'react-native';
 
 type NostrProfile = {
@@ -13,7 +13,7 @@ export const NostrProfile = ({ profile, accessoryLeft }: NostrProfile) => {
     <>
       <Image source={{ uri: profile.banner }} width={'100%'} height={125} />
       <View row right height={50}>
-        <Button   />
+        <Button />
       </View>
       <View style={styles.avatar}>
         <Avatar size={75} source={{ uri: profile.picture }} />

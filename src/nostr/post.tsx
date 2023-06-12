@@ -15,6 +15,7 @@ export type PostProps = {
   reactionFn: () => void;
   shareFn: () => void;
   goToProfile: () => void;
+  goToPost: () => void;
 };
 
 export const Post = ({
@@ -25,50 +26,30 @@ export const Post = ({
   reactionFn,
   shareFn,
   goToProfile,
+  goToPost,
 }: PostProps) => {
-  const {} = useBayWalletUI();
-  const [width, setWidth] = useState<string | undefined>('50%');
-  const [height, setHeight] = useState<number | undefined>(undefined);
-  const [clamp, setClamp] = useState<boolean>(false);
-  const [open, setOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (event.content.length > 100) {
-      setClamp(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!clamp) return;
-    if (open) {
-      setWidth(undefined);
-      setHeight(undefined);
-    } else {
-      setWidth('50%');
-    }
-  }, [open]);
+  const { } = useBayWalletUI();
+  const clamp = event.content.length > 100;
 
   return (
     <>
       <View
-        width={width}
-        height={height}
+        width="95%"
         backgroundColor="#FFF"
         style={styles.post}
       >
         <View right>
           <Text>•••</Text>
         </View>
-        <Pressable onPress={() => setOpen(!open)}>
+        <Pressable onPress={goToPost}>
           <TextWithClamp
             ui={{ text70: true }}
-            numberOfLines={clamp && !open ? 10 : undefined}
+            numberOfLines={clamp ? 10 : undefined}
           >
             {event.content}
           </TextWithClamp>
         </Pressable>
         <View height={10} />
-        <Text>wefnbqoiwrbgoqierbgqeoirgbqeoirgbeo</Text>
         <View row centerV spread>
           <Engage
             replyFn={replyFn}
@@ -83,8 +64,8 @@ export const Post = ({
             badgeProps={
               metadata.nip05
                 ? {
-                    backgroundColor: '#FFDF01',
-                  }
+                  backgroundColor: '#FFDF01',
+                }
                 : undefined
             }
             onPress={goToProfile}
@@ -105,7 +86,7 @@ const styles = StyleSheet.create({
 
 /**
  * Possible version of `Read more` section
- * 
+ *
   {clamp && (
     <Pressable onPress={() => setOpen(!open)}>
       <Text center style={styles.expand}>
@@ -117,7 +98,7 @@ const styles = StyleSheet.create({
 
 /**
  * Possible version of `Read more` section
- * 
+ *
   {clamp && (
     <Pressable onPress={() => setOpen(!open)}>
       <Text center style={styles.expand}>

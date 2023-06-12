@@ -8,11 +8,10 @@ export function Test() {
   return (
     <SafeAreaView>
       {/** @ts-ignore*/}
-      <Button label="Twitter" onPress={() => navigation.navigate('twitter')} />
       <Button
-        label="That New New"
+        label="Feed"
         // @ts-ignore
-        onPress={() => navigation.navigate('thatnewnew')}
+        onPress={() => navigation.navigate('feed')}
       />
     </SafeAreaView>
   );

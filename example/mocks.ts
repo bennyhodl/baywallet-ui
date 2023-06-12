@@ -1,5 +1,5 @@
 import { Event } from 'nostr-tools';
-import { Metadata } from 'src/nostr';
+import { Metadata } from '@baywallet/components';
 
 export const mockEvents: Event[] = [
   {
@@ -27,6 +27,69 @@ export const mockEvents: Event[] = [
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
+    {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content:
+      "Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.",
+    created_at: 1686185588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+     {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content:
+      "Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.",
+    created_at: 1686185588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },  {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content: 'Inputs, nonce sats mining blocksize double-spend problem difficulty stacking sats roller coaster. Nonce block reward satoshis, timestamp server double-spend problem electronic cash satoshis decentralized?',
+    created_at: 1686195588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+    {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content: 'Space citadel cryptocurrency peer-to-peer bitcoin Merkle Tree, soft fork hash? Sats!',
+    created_at: 1686195588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+    {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content:
+      "Address Merkle Tree, hard fork private key outputs mining when lambo roller coaster. SHA-256, consensus, sats!",
+    created_at: 1686185588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+   
 ];
 
 export const mockMetadata: Metadata[] = [

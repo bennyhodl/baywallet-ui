@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { ThatNewNew } from './ThatNewNew';
+import { Feed } from './Feed';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TwitterStyle from './Twitter';
 import { Test } from './Test';
 import BayWalletUIProvider from '@baywallet/components';
 import { theme } from './colors';
+import { PostDetail } from './PostDetail';
+import { Profile } from './Profile';
 
 const Stack = createNativeStackNavigator();
 function App() {
@@ -13,9 +14,10 @@ function App() {
     <BayWalletUIProvider colors={theme} theme="dark">
       <NavigationContainer>
         <Stack.Navigator initialRouteName="thatnewnew">
-          <Stack.Screen name="test" component={Test} />
-          <Stack.Screen name="twitter" component={TwitterStyle} />
-          <Stack.Screen name="thatnewnew" component={ThatNewNew} />
+          <Stack.Screen name="test" options={{ headerShown: false }} component={Test} />
+          <Stack.Screen name="feed" options={{ headerShown: false }} component={Feed} />
+          <Stack.Screen name="post-detail" options={{ headerShown: false }} component={PostDetail} />
+          <Stack.Screen name="profile" options={{ headerShown: false }} component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </BayWalletUIProvider>

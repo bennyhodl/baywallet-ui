@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Test } from './Test';
 import BayWalletUIProvider from '@baywallet/components';
 import { theme } from './colors';
-import { PostDetail } from './PostDetail';
+import { PostDetailPage } from './PostDetail';
 import { Profile } from './Profile';
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +16,7 @@ function App() {
         <Stack.Navigator initialRouteName="thatnewnew">
           <Stack.Screen name="test" options={{ headerShown: false }} component={Test} />
           <Stack.Screen name="feed" options={{ headerShown: false }} component={Feed} />
-          <Stack.Screen name="post-detail" options={{ headerShown: false }} component={PostDetail} />
+          <Stack.Screen name="post-detail" options={{ headerShown: false }} component={PostDetailPage} />
           <Stack.Screen name="profile" options={{ headerShown: false }} component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>

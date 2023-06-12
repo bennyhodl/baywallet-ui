@@ -1,13 +1,13 @@
 import React from "react"
-import { Metadata, NostrPost } from "@baywallet/components"
+import { Metadata, PostDetail } from "@baywallet/components"
 import { mockEvents, mockMetadata } from "example/mocks"
 import { Event } from "nostr-tools"
 import { useNavigation } from "@react-navigation/native"
 
-export const PostDetail = () => {
+export const PostDetailPage = () => {
   const navigation = useNavigation()
   return (
-    <NostrPost
+    <PostDetail
       event={mockEvents[1] as Event}
       metadata={mockMetadata[1] as Metadata}
       replyFn={() => console.log('reply')}

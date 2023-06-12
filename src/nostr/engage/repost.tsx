@@ -12,7 +12,7 @@ export const Repost = ({ engage, reposts }: RepostProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
+            uri: 'https://cdn-icons-png.flaticon.com/512/5825/5825574.png',
           }}
           size={25}
         />

@@ -73,11 +73,16 @@ export const PostDetail = ({
       <View style={styles.content}>
         <Text text70>{event.content}</Text>
       </View>
-      <Engage
-        replyFn={replyFn}
-        repostFn={repostFn}
-        reactionFn={reactionFn}
-      />
+      <View row style={styles.share}>
+        <Engage
+          replyFn={replyFn}
+          repostFn={repostFn}
+          reactionFn={reactionFn}
+        />
+        <Pressable onPress={shareFn}>
+          <Icon source={{ uri: "https://cdn.icon-icons.com/icons2/3415/PNG/512/ios_share_icon_218253.png" }} size={20} />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -109,4 +114,8 @@ const styles = StyleSheet.create({
   displayName: {
     paddingRight: 2,
   },
+  share: {
+    justifyContent: "space-between",
+    paddingRight: 20
+  }
 });

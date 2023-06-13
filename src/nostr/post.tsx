@@ -9,7 +9,7 @@ import { useBayWalletUI } from '../BayWalletUIProvider';
 
 export type PostProps = {
   event: Event;
-  metadata: Metadata;
+  getMetadata: (pubkey: string) => Promise<Metadata>;
   replyFn: () => void;
   repostFn: () => void;
   reactionFn: () => void;
@@ -20,7 +20,7 @@ export type PostProps = {
 
 export const Post = ({
   event,
-  metadata,
+  getMetadata,
   replyFn,
   repostFn,
   reactionFn,
@@ -30,6 +30,16 @@ export const Post = ({
 }: PostProps) => {
   const { } = useBayWalletUI();
   const clamp = event.content.length > 100;
+  const [metadata, setMetadata] = useState<Metadata>({ pubkey: '', picture: '' });
+
+  const getProfile = async () => {
+    const profile = await getMetadata(event.pubkey);
+    setMetadata(profile);
+  }
+
+  useEffect(() => {
+    getProfile();
+  }, [])
 
   return (
     <>
@@ -39,7 +49,9 @@ export const Post = ({
         style={styles.post}
       >
         <View right>
-          <Text>•••</Text>
+          <Pressable onPress={shareFn}>
+            <Text>•••</Text>
+          </Pressable>
         </View>
         <Pressable onPress={goToPost}>
           <TextWithClamp
@@ -55,14 +67,13 @@ export const Post = ({
             replyFn={replyFn}
             repostFn={repostFn}
             reactionFn={reactionFn}
-            shareFn={shareFn}
           />
           <Avatar
             size={30}
-            source={{ uri: metadata.picture }}
-            badgePosition={metadata.nip05 ? 'TOP_RIGHT' : undefined}
+            source={{ uri: metadata?.picture }}
+            badgePosition={metadata?.nip05 ? 'TOP_RIGHT' : undefined}
             badgeProps={
-              metadata.nip05
+              metadata?.nip05
                 ? {
                   backgroundColor: '#FFDF01',
                 }

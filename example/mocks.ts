@@ -10,7 +10,7 @@ export const mockEvents: Event[] = [
     ],
     content: 'hello bay wallet 🌴',
     created_at: 1686195588,
-    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    pubkey: '43c32ed61a8259ddaef6eb43c1c3114524c09690cbb92c57196b395abf73c527',
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
@@ -36,7 +36,7 @@ export const mockEvents: Event[] = [
     content:
       "Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.",
     created_at: 1686185588,
-    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    pubkey: '43c32ed61a8259ddaef6eb43c1c3114524c09690cbb92c57196b395abf73c527',
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
@@ -97,7 +97,7 @@ export const mockMetadata: Metadata[] = [
     name: 'Bay Wallet',
     username: 'baywallet',
     display_name: 'Bay Wallet',
-    picture: 'https://void.cat/d/JmvLC9iEZfkN8hxTJFbXRu.webp',
+    picture: 'https://nostr.build/i/8a4ed36042bfa3347d4c8c63f3435dfa66ebf70c9b46a573c286739006a0dbe4.jpg',
     banner:
       'https://pbs.twimg.com/profile_banners/1304412280902352896/1677291992/1500x500',
     about: 'tampa is the best city in the us',
@@ -105,7 +105,7 @@ export const mockMetadata: Metadata[] = [
     lud06: 'LNfn34ihf300934hng093qb4g093b4g093qg4g3q45g',
     lud16: 'LNfn34ihf300934hng093qb4g093b4g093qg4g3q45g',
     nip05: 'baywallet@bitcoinbay.club',
-    pubkey: '43c32ed61a8259ddaef6eb43c1c3114524c09690cbb92c57196b395abf73c527',
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
   },
   {
     name: 'Gucci Bucket Hat',

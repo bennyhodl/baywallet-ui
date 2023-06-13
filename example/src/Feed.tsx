@@ -4,6 +4,10 @@ import { mockEvents, mockMetadata } from 'example/mocks';
 import { Post, Metadata } from '@baywallet/components';
 import { useNavigation } from '@react-navigation/native';
 
+export const getProfile = async (pubkey: string): Promise<Metadata> => {
+  return await mockMetadata.find((metadata) => metadata.pubkey === pubkey) ?? mockMetadata[0] as Metadata
+}
+
 export const Feed = () => {
   const navigation = useNavigation()
   return (
@@ -14,7 +18,9 @@ export const Feed = () => {
             {mockEvents
               .filter((_, index) => index % 2 === 0)
               .map((event, index) => {
-                return <Post key={event.id} event={event} metadata={mockMetadata[index] as Metadata} replyFn={() => console.log('reply')}
+                return <Post key={event.id} event={event}
+                  getMetadata={getProfile}
+                  replyFn={() => console.log('reply')}
                   repostFn={() => console.log('repost')}
                   reactionFn={() => console.log('reaction')}
                   shareFn={() => console.log('share')}
@@ -30,7 +36,9 @@ export const Feed = () => {
               {mockEvents
                 .filter((_, index) => index % 2 === 1)
                 .map((event, index) => {
-                  return <Post key={event.id} event={event} metadata={mockMetadata[index + 1] as Metadata} replyFn={() => console.log('reply')}
+                  return <Post key={event.id} event={event}
+                    getMetadata={getProfile}
+                    replyFn={() => console.log('reply')}
                     repostFn={() => console.log('repost')}
                     reactionFn={() => console.log('reaction')}
                     shareFn={() => console.log('share')}

@@ -1,21 +1,33 @@
 import React from "react"
-import { Metadata, PostDetail } from "@baywallet/components"
-import { mockEvents, mockMetadata } from "example/mocks"
+import { PostDetail, Reply } from "@baywallet/components"
+import { mockEvents } from "example/mocks"
 import { Event } from "nostr-tools"
 import { useNavigation } from "@react-navigation/native"
+import { SafeAreaView } from "react-native"
+import { getProfile } from "./Feed"
 
 export const PostDetailPage = () => {
   const navigation = useNavigation()
   return (
-    <PostDetail
-      event={mockEvents[1] as Event}
-      metadata={mockMetadata[1] as Metadata}
-      replyFn={() => console.log('reply')}
-      repostFn={() => console.log('repost')}
-      reactionFn={() => console.log('reaction')}
-      shareFn={() => console.log('share')}
-      // @ts-ignore
-      goToProfile={() => navigation.navigate("profile")}
-    />
+    <SafeAreaView>
+      <PostDetail
+        event={mockEvents[1] as Event}
+        getMetadata={getProfile}
+        replyFn={() => console.log('reply')}
+        repostFn={() => console.log('repost')}
+        reactionFn={() => console.log('reaction')}
+        shareFn={() => console.log('share')}
+        // @ts-ignore
+        goToProfile={() => navigation.navigate("profile")}
+      />
+      <Reply event={mockEvents[0] as Event}
+        getMetadata={getProfile}
+        replyFn={() => console.log('reply')}
+        repostFn={() => console.log('repost')}
+        reactionFn={() => console.log('reaction')}
+        shareFn={() => console.log('share')}
+        // @ts-ignore
+        goToProfile={() => navigation.navigate("profile")} />
+    </SafeAreaView>
   )
 }

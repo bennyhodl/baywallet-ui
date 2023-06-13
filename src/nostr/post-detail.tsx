@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Event } from 'nostr-tools';
 import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
 import { Metadata } from '../types';
@@ -8,7 +8,7 @@ import { Engage } from './engage/engage';
 
 export type PostDetailProps = {
   event: Event;
-  metadata: Metadata;
+  getMetadata: (pubkey: string) => Promise<Metadata>;
   replyFn: () => void;
   repostFn: () => void;
   reactionFn: () => void;
@@ -18,7 +18,7 @@ export type PostDetailProps = {
 
 export const PostDetail = ({
   event,
-  metadata,
+  getMetadata,
   replyFn,
   repostFn,
   reactionFn,
@@ -26,6 +26,17 @@ export const PostDetail = ({
   goToProfile,
 }: PostDetailProps) => {
   const { time, date } = formatDate(event.created_at);
+  const [metadata, setMetadata] = useState<Metadata>({ pubkey: '', picture: '' });
+
+  const getProfile = async () => {
+    const profile = await getMetadata(event.pubkey);
+    setMetadata(profile);
+  }
+
+  useEffect(() => {
+    getProfile();
+  }, [])
+
   return (
     <View style={styles.post}>
       <View row>
@@ -66,7 +77,6 @@ export const PostDetail = ({
         replyFn={replyFn}
         repostFn={repostFn}
         reactionFn={reactionFn}
-        shareFn={shareFn}
       />
     </View>
   );

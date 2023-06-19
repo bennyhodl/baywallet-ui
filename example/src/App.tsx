@@ -3,7 +3,7 @@ import { Feed } from './Feed';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Test } from './Test';
-import BayWalletUIProvider from '@baywallet/components';
+import BayWalletUIProvider from 'components';
 import { theme } from './colors';
 import { PostDetailPage } from './PostDetail';
 import { Profile } from './Profile';

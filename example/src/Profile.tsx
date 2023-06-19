@@ -1,6 +1,6 @@
 import { mockMetadata } from 'example/mocks';
 import React from 'react';
-import { NostrProfile } from '@baywallet/components';
+import { NostrProfile } from 'components';
 import { Metadata } from 'src/types';
 
 export const Profile = () => {

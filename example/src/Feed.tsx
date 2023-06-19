@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 import { mockEvents, mockMetadata } from 'example/mocks';
-import { Post, Metadata } from '@baywallet/components';
+import { Post, Metadata } from 'components';
 import { useNavigation } from '@react-navigation/native';
 
 export const getProfile = async (pubkey: string): Promise<Metadata> => {

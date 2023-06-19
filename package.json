@@ -1,5 +1,5 @@
 {
-  "name": "@baywallet/components",
+  "name": "components",
   "version": "0.0.3",
   "description": "test",
   "main": "lib/commonjs/index",

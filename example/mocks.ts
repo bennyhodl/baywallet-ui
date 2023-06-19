@@ -1,5 +1,5 @@
 import { Event } from 'nostr-tools';
-import { Metadata } from '@baywallet/components';
+import { Metadata } from 'components';
 
 export const mockEvents: Event[] = [
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostDetail, Reply } from '@baywallet/components';
+import { PostDetail, Reply } from 'components';
 import { mockEvents } from 'example/mocks';
 import { Event } from 'nostr-tools';
 import { useNavigation } from '@react-navigation/native';

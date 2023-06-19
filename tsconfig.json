@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@baywallet/components": ["./src/index"]
+      "components": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

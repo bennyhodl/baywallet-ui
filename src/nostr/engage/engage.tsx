@@ -11,12 +11,7 @@ export type EngageProps = {
   reactionFn: () => void;
 };
 
-export const Engage = ({
-  replyFn,
-  repostFn,
-  reactionFn,
-}:
-  EngageProps) => {
+export const Engage = ({ replyFn, repostFn, reactionFn }: EngageProps) => {
   return (
     <View row space-between style={styles.bar}>
       <Reply engage={replyFn} />

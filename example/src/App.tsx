@@ -14,10 +14,26 @@ function App() {
     <BayWalletUIProvider colors={theme} theme="dark">
       <NavigationContainer>
         <Stack.Navigator initialRouteName="thatnewnew">
-          <Stack.Screen name="test" options={{ headerShown: false }} component={Test} />
-          <Stack.Screen name="feed" options={{ headerShown: false }} component={Feed} />
-          <Stack.Screen name="post-detail" options={{ headerShown: false }} component={PostDetailPage} />
-          <Stack.Screen name="profile" options={{ headerShown: false }} component={Profile} />
+          <Stack.Screen
+            name="test"
+            options={{ headerShown: false }}
+            component={Test}
+          />
+          <Stack.Screen
+            name="feed"
+            options={{ headerShown: false }}
+            component={Feed}
+          />
+          <Stack.Screen
+            name="post-detail"
+            options={{ headerShown: false }}
+            component={PostDetailPage}
+          />
+          <Stack.Screen
+            name="profile"
+            options={{ headerShown: false }}
+            component={Profile}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </BayWalletUIProvider>

@@ -27,69 +27,71 @@ export const mockEvents: Event[] = [
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
-    {
+  {
     kind: 1,
     tags: [
       ['e', '34f45g45g4g24g425g4'],
       ['p', 'q3rfq5g4h4th42t'],
     ],
     content:
-      "Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.",
+      'Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.',
     created_at: 1686185588,
     pubkey: '43c32ed61a8259ddaef6eb43c1c3114524c09690cbb92c57196b395abf73c527',
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
-     {
+  {
     kind: 1,
     tags: [
       ['e', '34f45g45g4g24g425g4'],
       ['p', 'q3rfq5g4h4th42t'],
     ],
     content:
-      "Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.",
+      'Bitcoin ipsum dolor sit amet. Space citadel, hodl mining, electronic cash, double-spend problem hashrate, public key few understand this pizza.',
     created_at: 1686185588,
     pubkey: '34t3n5g24h509gn0945hjg095209h54',
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
-  },  {
-    kind: 1,
-    tags: [
-      ['e', '34f45g45g4g24g425g4'],
-      ['p', 'q3rfq5g4h4th42t'],
-    ],
-    content: 'Inputs, nonce sats mining blocksize double-spend problem difficulty stacking sats roller coaster. Nonce block reward satoshis, timestamp server double-spend problem electronic cash satoshis decentralized?',
-    created_at: 1686195588,
-    pubkey: '34t3n5g24h509gn0945hjg095209h54',
-    id: 'wqmo4hnr908q3hgq903h5gq90h5',
-    sig: 'kf0934jf093hj40f9h34',
   },
-    {
-    kind: 1,
-    tags: [
-      ['e', '34f45g45g4g24g425g4'],
-      ['p', 'q3rfq5g4h4th42t'],
-    ],
-    content: 'Space citadel cryptocurrency peer-to-peer bitcoin Merkle Tree, soft fork hash? Sats!',
-    created_at: 1686195588,
-    pubkey: '34t3n5g24h509gn0945hjg095209h54',
-    id: 'wqmo4hnr908q3hgq903h5gq90h5',
-    sig: 'kf0934jf093hj40f9h34',
-  },
-    {
+  {
     kind: 1,
     tags: [
       ['e', '34f45g45g4g24g425g4'],
       ['p', 'q3rfq5g4h4th42t'],
     ],
     content:
-      "Address Merkle Tree, hard fork private key outputs mining when lambo roller coaster. SHA-256, consensus, sats!",
+      'Inputs, nonce sats mining blocksize double-spend problem difficulty stacking sats roller coaster. Nonce block reward satoshis, timestamp server double-spend problem electronic cash satoshis decentralized?',
+    created_at: 1686195588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+  {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content:
+      'Space citadel cryptocurrency peer-to-peer bitcoin Merkle Tree, soft fork hash? Sats!',
+    created_at: 1686195588,
+    pubkey: '34t3n5g24h509gn0945hjg095209h54',
+    id: 'wqmo4hnr908q3hgq903h5gq90h5',
+    sig: 'kf0934jf093hj40f9h34',
+  },
+  {
+    kind: 1,
+    tags: [
+      ['e', '34f45g45g4g24g425g4'],
+      ['p', 'q3rfq5g4h4th42t'],
+    ],
+    content:
+      'Address Merkle Tree, hard fork private key outputs mining when lambo roller coaster. SHA-256, consensus, sats!',
     created_at: 1686185588,
     pubkey: '34t3n5g24h509gn0945hjg095209h54',
     id: 'wqmo4hnr908q3hgq903h5gq90h5',
     sig: 'kf0934jf093hj40f9h34',
   },
-   
 ];
 
 export const mockMetadata: Metadata[] = [
@@ -97,7 +99,8 @@ export const mockMetadata: Metadata[] = [
     name: 'Bay Wallet',
     username: 'baywallet',
     display_name: 'Bay Wallet',
-    picture: 'https://nostr.build/i/8a4ed36042bfa3347d4c8c63f3435dfa66ebf70c9b46a573c286739006a0dbe4.jpg',
+    picture:
+      'https://nostr.build/i/8a4ed36042bfa3347d4c8c63f3435dfa66ebf70c9b46a573c286739006a0dbe4.jpg',
     banner:
       'https://pbs.twimg.com/profile_banners/1304412280902352896/1677291992/1500x500',
     about: 'tampa is the best city in the us',

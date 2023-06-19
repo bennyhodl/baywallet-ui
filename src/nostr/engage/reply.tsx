@@ -12,7 +12,7 @@ export const Reply = ({ engage, replies }: ReplyProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri: "https://cdn.icon-icons.com/icons2/2066/PNG/512/reply_icon_125173.png"
+            uri: 'https://cdn.icon-icons.com/icons2/2066/PNG/512/reply_icon_125173.png',
           }}
           size={20}
         />

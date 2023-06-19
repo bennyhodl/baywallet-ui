@@ -6,18 +6,24 @@ import { Button } from '../base/button';
 
 type NostrProfile = {
   profile: Metadata;
-  follow: () => void
-  followers: number
-  following: number
-  relays: number
+  follow: () => void;
+  followers: number;
+  following: number;
+  relays: number;
 };
 
-export const NostrProfile = ({ profile, follow, followers, following, relays }: NostrProfile) => {
+export const NostrProfile = ({
+  profile,
+  follow,
+  followers,
+  following,
+  relays,
+}: NostrProfile) => {
   return (
     <>
       <Image source={{ uri: profile.banner }} width={'100%'} height={125} />
       <View row right style={styles.action}>
-        <Button label='Follow' onPress={follow} width={100} height={40} />
+        <Button label="Follow" onPress={follow} width={100} height={40} />
       </View>
       <View style={styles.avatar}>
         <Avatar size={75} source={{ uri: profile.picture }} />
@@ -29,14 +35,11 @@ export const NostrProfile = ({ profile, follow, followers, following, relays }: 
             <>
               <Icon
                 source={{
-                  uri:
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
+                  uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
                 }}
                 size={15}
               />
-              <Text style={styles.nip5}>
-                {profile.nip05.split('@')[1]}
-              </Text>
+              <Text style={styles.nip5}>{profile.nip05.split('@')[1]}</Text>
             </>
           )}
         </View>
@@ -79,5 +82,5 @@ const styles = StyleSheet.create({
   },
   username: {
     color: '#555',
-  }
+  },
 });

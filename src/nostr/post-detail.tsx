@@ -26,16 +26,19 @@ export const PostDetail = ({
   goToProfile,
 }: PostDetailProps) => {
   const { time, date } = formatDate(event.created_at);
-  const [metadata, setMetadata] = useState<Metadata>({ pubkey: '', picture: '' });
+  const [metadata, setMetadata] = useState<Metadata>({
+    pubkey: '',
+    picture: '',
+  });
 
   const getProfile = async () => {
     const profile = await getMetadata(event.pubkey);
     setMetadata(profile);
-  }
+  };
 
   useEffect(() => {
     getProfile();
-  }, [])
+  }, []);
 
   return (
     <View style={styles.post}>
@@ -51,8 +54,7 @@ export const PostDetail = ({
                 <>
                   <Icon
                     source={{
-                      uri:
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
+                      uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
                     }}
                     size={15}
                   />
@@ -74,13 +76,14 @@ export const PostDetail = ({
         <Text text70>{event.content}</Text>
       </View>
       <View row style={styles.share}>
-        <Engage
-          replyFn={replyFn}
-          repostFn={repostFn}
-          reactionFn={reactionFn}
-        />
+        <Engage replyFn={replyFn} repostFn={repostFn} reactionFn={reactionFn} />
         <Pressable onPress={shareFn}>
-          <Icon source={{ uri: "https://cdn.icon-icons.com/icons2/3415/PNG/512/ios_share_icon_218253.png" }} size={20} />
+          <Icon
+            source={{
+              uri: 'https://cdn.icon-icons.com/icons2/3415/PNG/512/ios_share_icon_218253.png',
+            }}
+            size={20}
+          />
         </Pressable>
       </View>
     </View>
@@ -115,7 +118,7 @@ const styles = StyleSheet.create({
     paddingRight: 2,
   },
   share: {
-    justifyContent: "space-between",
-    paddingRight: 20
-  }
+    justifyContent: 'space-between',
+    paddingRight: 20,
+  },
 });

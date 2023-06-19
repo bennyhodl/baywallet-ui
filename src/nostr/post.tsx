@@ -28,26 +28,25 @@ export const Post = ({
   goToProfile,
   goToPost,
 }: PostProps) => {
-  const { } = useBayWalletUI();
+  const {} = useBayWalletUI();
   const clamp = event.content.length > 100;
-  const [metadata, setMetadata] = useState<Metadata>({ pubkey: '', picture: '' });
+  const [metadata, setMetadata] = useState<Metadata>({
+    pubkey: '',
+    picture: '',
+  });
 
   const getProfile = async () => {
     const profile = await getMetadata(event.pubkey);
     setMetadata(profile);
-  }
+  };
 
   useEffect(() => {
     getProfile();
-  }, [])
+  }, []);
 
   return (
     <>
-      <View
-        width="95%"
-        backgroundColor="#FFF"
-        style={styles.post}
-      >
+      <View width="95%" backgroundColor="#FFF" style={styles.post}>
         <View right>
           <Pressable onPress={shareFn}>
             <Text>•••</Text>
@@ -75,8 +74,8 @@ export const Post = ({
             badgeProps={
               metadata?.nip05
                 ? {
-                  backgroundColor: '#FFDF01',
-                }
+                    backgroundColor: '#FFDF01',
+                  }
                 : undefined
             }
             onPress={goToProfile}

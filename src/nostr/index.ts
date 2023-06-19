@@ -1,16 +1,4 @@
-export * from './nostr-post';
+export * from './post-detail';
 export * from './nostr-profile';
-
-export type Metadata = {
-  name?: string;
-  username?: string;
-  display_name?: string;
-  picture?: string;
-  banner?: string;
-  about?: string;
-  website?: string;
-  lud06?: string;
-  lud16?: string;
-  nip05?: string;
-  pubkey?: string;
-};
+export * from './post';
+export * from './reply';

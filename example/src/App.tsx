@@ -1,31 +1,43 @@
 import * as React from 'react';
-import { mockEvents, mockMetadata } from 'example/mocks';
-import { SafeAreaView, ScrollView } from 'react-native';
-import { Metadata, NostrPost, NostrProfile } from '@baywallet/components';
-import { Event } from 'nostr-tools';
+import { Feed } from './Feed';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Test } from './Test';
+import BayWalletUIProvider from 'components';
+import { theme } from './colors';
+import { PostDetailPage } from './PostDetail';
+import { Profile } from './Profile';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+function App() {
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <NostrProfile profile={mockMetadata[0] as Metadata} />
-        <NostrPost
-          event={mockEvents[0] as Event}
-          metadata={mockMetadata[0] as Metadata}
-          replyFn={() => console.log('reply')}
-          repostFn={() => console.log('repost')}
-          reactionFn={() => console.log('reaction')}
-          shareFn={() => console.log('share')}
-        />
-        <NostrPost
-          event={mockEvents[1] as Event}
-          metadata={mockMetadata[1] as Metadata}
-          replyFn={() => console.log('reply')}
-          repostFn={() => console.log('repost')}
-          reactionFn={() => console.log('reaction')}
-          shareFn={() => console.log('share')}
-        />
-      </ScrollView>
-    </SafeAreaView>
+    <BayWalletUIProvider colors={theme} theme="dark">
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="thatnewnew">
+          <Stack.Screen
+            name="test"
+            options={{ headerShown: false }}
+            component={Test}
+          />
+          <Stack.Screen
+            name="feed"
+            options={{ headerShown: false }}
+            component={Feed}
+          />
+          <Stack.Screen
+            name="post-detail"
+            options={{ headerShown: false }}
+            component={PostDetailPage}
+          />
+          <Stack.Screen
+            name="profile"
+            options={{ headerShown: false }}
+            component={Profile}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </BayWalletUIProvider>
   );
 }
+
+export default App;

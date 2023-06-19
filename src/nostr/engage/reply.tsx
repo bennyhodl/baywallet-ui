@@ -12,9 +12,9 @@ export const Reply = ({ engage, replies }: ReplyProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
+            uri: 'https://cdn.icon-icons.com/icons2/2066/PNG/512/reply_icon_125173.png',
           }}
-          size={25}
+          size={20}
         />
         <Text style={styles.replies}>{replies ?? ''}</Text>
       </View>

@@ -12,7 +12,7 @@ export const Reaction = ({ engage, reactions }: ReactionProps) => {
       <View row centerV>
         <Icon
           source={{
-            uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png',
+            uri: 'https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png',
           }}
           size={25}
         />

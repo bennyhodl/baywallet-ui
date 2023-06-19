@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Event } from 'nostr-tools';
 import { Avatar, Icon, Text, View } from 'react-native-ui-lib';
-import { Metadata } from './index';
+import { Metadata } from '../types';
 import { Pressable, StyleSheet } from 'react-native';
 import { formatDate } from '../util';
 import { Engage } from './engage/engage';
 
-export type PostProps = {
+export type PostDetailProps = {
   event: Event;
-  metadata: Metadata;
+  getMetadata: (pubkey: string) => Promise<Metadata>;
   replyFn: () => void;
   repostFn: () => void;
   reactionFn: () => void;
@@ -16,16 +16,30 @@ export type PostProps = {
   goToProfile?: () => void;
 };
 
-export const NostrPost = ({
+export const PostDetail = ({
   event,
-  metadata,
+  getMetadata,
   replyFn,
   repostFn,
   reactionFn,
   shareFn,
   goToProfile,
-}: PostProps) => {
+}: PostDetailProps) => {
   const { time, date } = formatDate(event.created_at);
+  const [metadata, setMetadata] = useState<Metadata>({
+    pubkey: '',
+    picture: '',
+  });
+
+  const getProfile = async () => {
+    const profile = await getMetadata(event.pubkey);
+    setMetadata(profile);
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
     <View style={styles.post}>
       <View row>
@@ -40,8 +54,7 @@ export const NostrPost = ({
                 <>
                   <Icon
                     source={{
-                      uri:
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
+                      uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/800px-Twitter_Verified_Badge.svg.png',
                     }}
                     size={15}
                   />
@@ -62,12 +75,17 @@ export const NostrPost = ({
       <View style={styles.content}>
         <Text text70>{event.content}</Text>
       </View>
-      <Engage
-        replyFn={replyFn}
-        repostFn={repostFn}
-        reactionFn={reactionFn}
-        shareFn={shareFn}
-      />
+      <View row style={styles.share}>
+        <Engage replyFn={replyFn} repostFn={repostFn} reactionFn={reactionFn} />
+        <Pressable onPress={shareFn}>
+          <Icon
+            source={{
+              uri: 'https://cdn.icon-icons.com/icons2/3415/PNG/512/ios_share_icon_218253.png',
+            }}
+            size={20}
+          />
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -98,5 +116,9 @@ const styles = StyleSheet.create({
   },
   displayName: {
     paddingRight: 2,
+  },
+  share: {
+    justifyContent: 'space-between',
+    paddingRight: 20,
   },
 });
